@@ -1,0 +1,68 @@
+/*(K) A Content.txt file contains the eassy of Gandhiji. Write a program 
+to replace a "Gandhiji" word with "Mahatama" in Content.txt file 
+and display new content of file on the screen.
+
+Gandhiji has influenced many international leaders around the world. 
+His struggle certainly became an inspiration for leaders. 
+Such leaders are Martin Luther King Jr., James Beve, and James Lawson. 
+Furthermore, Gandhiji influenced Nelson Mandela for his freedom struggle. 
+Also, Lanza del Vasto came to India to live with Gandhiji
+
+*/
+#include<iostream>
+#include<fstream>
+using namespace std;
+int main(){
+    char ch;
+    string paragraph = "",word;
+    string oldName = "Gandhiji"; 
+    string newName = "Mahatama";
+    ofstream fout;
+    fout.open("Content.txt");
+    cout<<"Enter a Gandhiji eassy ('0' to stop): ";
+    while(1){
+        cin.get(ch);
+        if(ch == '0'){break;}
+        fout<<ch;
+    }
+    fout.close();
+    ifstream fin;
+    fin.open("Content.txt");
+    if(!fin){
+        cout<<"File Opening ERROR"<<endl;
+        return 0;
+    }
+    while(1)
+    {
+        fin>>word;
+        if(fin.eof()){break;}
+        if(word == oldName){word = newName;}
+        paragraph += word + " ";
+    }
+    fin.close();
+    fout.open("Content.txt");
+    fout<<paragraph<<endl;
+
+    cout<<"\nNew Content of file is : ";
+    fin.open("Content.txt");
+    while(1)
+    {
+        fin>>word;
+        if(fin.eof()){break;}
+        cout<<word<<" ";
+    }
+    
+    return 0;
+}
+
+/*
+o/p :
+Enter a Gandhiji peregraph ('0' to stop): 
+Gandhiji has influenced many international leaders around the world. 
+His struggle certainly became an inspiration for leaders.
+Such leaders are Martin Luther King Jr., James Beve, and James Lawson. 
+Furthermore, Gandhiji influenced Nelson Mandela for his freedom struggle. 
+Also, Lanza del Vasto came to India to live with Gandhiji 0
+
+New Content in file is : Mahatama has influenced many international leaders around the world. His struggle certainly became an inspiration for leaders. Such leaders are Martin Luther King Jr., James Beve, and James Lawson. Furthermore, Mahatama influenced Nelson Mandela for his freedom struggle. Also, Lanza del Vasto came to India to live with Mahatama
+*/

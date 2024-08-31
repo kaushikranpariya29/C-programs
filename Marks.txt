@@ -1,0 +1,18 @@
+#include<iostream>
+using namespace std;
+int main()
+{
+	int m,c,p,total=0;
+	cout<<"Enter your marks in maths: ";
+	cin>>m;
+	cout<<"Enter your marks in chemistry: ";
+	cin>>c;
+	cout<<"Enter your marks in physics: ";
+	cin>>p;
+	total = m + c + p;
+	if (m>=65 && c>=50 && total>=190 && m+p>=40)
+	cout<<"You are eligible for admission in professional course!"<<endl;
+	else
+	cout<<"You are not eligible for admission."<<endl;
+	return 0;
+}

@@ -1,0 +1,23 @@
+//program to print the height of a person & categorize as taller, dwarf & average
+#include<iostream>
+using namespace std;
+int main()
+{
+	double height;
+	cout<<"Enter height";
+	cin>>height;
+	if(height>6)
+	{
+		cout<<"a person is taller"<<endl;
+	}
+	if(height>=5 & height<6)
+	{
+		cout<<"a person is average"<<endl;
+	}
+	if(height<5)
+	{
+		cout<<"a person is dwarf"<<endl;
+	}
+	return 0;
+}
+

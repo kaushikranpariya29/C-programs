@@ -1,0 +1,33 @@
+#include<iostream>
+using namespace std;
+int main()
+{
+	int km,tax=0;
+	char code;
+	cout<<"Enter the code of City : ";
+	cin>>code;
+	cout<<"Enter Kilo meter : ";
+	cin>>km;
+	if(code=='F' || code=='f' && km<=100)
+	{
+		tax=km*0;
+	}
+	else if(code=='F' || code=='f' && km<=500)
+	{
+		tax=(km-100)*100;
+	}
+	else if (code=='B' || code=='b' && km<=100)
+	{
+		tax=km*300;
+	}
+	else if (code=='B' || code=='b' && km<=500)
+	{
+		tax=km*500;
+	}
+	else 
+	{
+		cout<<"Invalid Input"<<endl;
+	}
+	cout<<"Toll tax for Customer is : "<<tax<<endl;
+	return 0;
+}

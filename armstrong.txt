@@ -1,0 +1,29 @@
+#include<iostream>
+using namespace std;
+void add(int num);
+int main()
+{
+	int number;
+	cout<<"enter the number:";
+	cin>>number;
+	add(number);
+	return 0;
+
+};
+void add(int x)
+{
+	int num,y,r,result;	
+	y=num;
+	while(y!=0)
+	{
+		r=y%10;
+		result+=r*r*r;
+		y/=10;
+	}
+	if(y==result)
+		cout<<"armstrong number"<<endl;
+	else
+		cout<<"no armstrong number"<<endl;
+}
+
+

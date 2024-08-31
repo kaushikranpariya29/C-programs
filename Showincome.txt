@@ -1,0 +1,45 @@
+//friend class
+#include<iostream>
+using namespace std;
+class Boy
+{
+	int income1;
+	int income2;
+	public:
+	void setdata(int in1, int in2)
+	{
+		income1=in1;
+		income2=in2;
+	}
+	friend class Girl;
+};
+class Girl
+{
+	int income;
+	public:
+	int girlfunction(Boy b1)
+	{
+		return b1.income1+b1.income2;
+	}
+	void setdata(int in)
+	{
+		income=in;
+	}
+	void show()
+	{
+		Boy b1;
+		b1.setdata(1000,2000);
+		cout<<"boy income"<<b1.income1<<endl;
+		cout<<"girl income"<<income<<endl;
+	}
+};
+int main()
+{
+	Boy b1;
+	Girl g1;
+	b1.setdata(1500,2500);
+	g1.setdata(3000);
+	cout<<"boy's total income:"<<g1.girlfunction(b1)<<endl;
+	g1.show();
+	return 0;
+}

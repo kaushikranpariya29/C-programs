@@ -1,0 +1,52 @@
+#include<iostream>
+using namespace std;
+int main()
+{
+	int row,column;
+	cout<<"Enter a Row of an array : ";
+	cin>>row;
+	cout<<"Enter a Column of an array : ";
+	cin>>column;
+	int array[column][row];
+	cout<<"Enter a Eelemnts of an array : \n";
+	for(int c=0 ; c<column ; c++)
+	{
+		for(int r=0 ; r<row ;)
+		{
+			cin>>array[c][r];
+			if(array[c][r] < 0 )
+			{
+				cout<<"\nInvalid Input try again :-\n";
+				continue;
+			}
+			r++;		
+		}
+	}
+	cout<<"\nEelemnts of an array is : \n";
+	for(int c=0 ; c<column ; c++)
+	{
+		for(int r=0 ; r<row ; r++)
+		{
+			cout<<array[c][r]<<" ";
+		}
+		cout<<endl;
+	}
+	return 0;
+}
+BMIIT202103103410009@bmiit:~/Desktop$ g++ P6.cpp
+BMIIT202103103410009@bmiit:~/Desktop$ ./a.out
+Enter a Row of an array : 2
+Enter a Column of an array : 3
+Enter a Eelemnts of an array : 
+1
+2
+3
+4
+5
+6
+
+Eelemnts of an array is : 
+1 2 
+3 4 
+5 6 
+

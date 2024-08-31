@@ -1,0 +1,42 @@
+#include<iostream>
+using namespace std;
+class Employee
+{
+	private:
+	int eid,esalary;
+	char ename[50],department[50],designation[50],gender[1];
+	public:
+	void getdata()
+	{
+		cout<<"✍️  Employee ID : ";
+		cin>>eid;
+		cout<<"✍️  Employee Name : ";
+		cin>>ename;
+		cout<<"✍️  Employee's Department : ";
+		cin>>department;
+		cout<<"✍️  Designation : ";
+		cin>>designation;
+		cout<<"✍️  Employee's Gender  : ";
+		cin>>gender;
+		cout<<"✍️  Employee's Salary : ";
+		cin>>esalary;
+		cout<<"==================Detail of Employee ===================="<<endl;
+	}
+	void displaydata()
+	{
+		cout<<"Employee ID🖋️ : "<<eid<<endl;
+		cout<<"Employee Name🗒️ : "<<ename<<endl;
+		cout<<"Employee's Department🏢️ : "<<department<<endl;
+		cout<<"Designation😎️ : "<<designation<<endl;
+		cout<<"Employee's Gender📍️  : "<<gender<<endl;
+		cout<<"Employee's Salary💸️ : "<<esalary<<endl;
+	}
+};
+int main()
+{
+	Employee E;
+	E.getdata();
+	E.displaydata();
+	return 0;
+}
+

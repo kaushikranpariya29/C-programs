@@ -1,0 +1,29 @@
+//program to print calculate gross salary and net salary
+#include<iostream>
+using namespace std;
+int main()
+{
+	int salary, gs=0,ns=0,DA=0,HRA=0,MA=0,PF=0,Tax=0,da,hra,ma,pf,tax;
+	cout<<"Enter salary :";
+	cin>>salary;
+	cout<<"Enter da :";
+	cin>>da;
+	DA=salary*da/100;
+	cout<<"Enter hra :";
+	cin>>hra;
+	HRA=salary*hra/100;
+	cout<<"Enter ma :";
+	cin>>ma;
+	MA=salary*ma/100;
+	cout<<"Enter pf :";
+	cin>>pf;
+	PF=salary*pf/100;
+	cout<<"Enter tax :";
+	cin>>tax;
+	Tax=salary*tax/100;
+	gs=salary+DA+HRA+MA;
+	ns=gs-PF-Tax;
+	cout<<"gross salary :"<<gs<<endl;
+	cout<<"net salary :"<<ns<<endl;
+	return 0;
+}

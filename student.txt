@@ -1,0 +1,35 @@
+#include<iostream>
+using namespace std;
+class student
+{
+	private:
+	int sid;
+	char sname[20];
+	char course[20];
+	public:
+
+	void getdata()
+	{
+		cout<<"Enter Student ID : ";
+		cin>>sid;
+		cout<<"Enter Student Name : ";
+		cin>>sname;
+		cout<<"Enter Course : ";
+		cin>>course;
+		cout<<"==================Detail of Student 👨‍🎓️==================="<<endl;
+	}
+	void displaydata()
+	{
+		cout<<"Student ID : "<<sid<<endl;
+		cout<<"Student Name : "<<sname<<endl;
+		cout<<"Course : "<<course<<endl;
+		
+	}
+};
+int main()
+{
+	student s;
+	s.getdata();
+	s.displaydata();
+	return 0;
+}

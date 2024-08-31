@@ -1,0 +1,26 @@
+/*There is a file namely Integer.txt which contains only integer 
+numbers. Write a C++ program to read the numbers from 
+Integer.txt file and display the sum of even numbers only.*/
+
+#include<iostream>
+#include<fstream>
+using namespace std;
+int main()
+{
+    int num;
+    int sum=0;
+    ifstream fin ("Integer.txt");
+    if(!fin)
+    {
+        cout<<"file opening error";
+        return 0;
+    }
+    while(1)
+    {
+        fin>>num;
+        if(num%2==0){sum += num;}
+        if(fin.eof()){break;}
+    }
+    cout<<"sum of all even number is "<<sum<<endl;
+    return 0;
+}

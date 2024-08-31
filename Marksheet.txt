@@ -1,0 +1,22 @@
+//programm to print total and percentage of student's marks ,
+#include<iostream>
+using namespace std;
+int main()
+{
+	int M1,M2,M3,M4,M5,total=0;
+	float percentage=0;
+	cout<<"enter marks of Mathematics"<<endl;
+	cin>>M1;
+	cout<<"enter marks of Gujarati"<<endl;
+	cin>>M2;
+	cout<<"enter marks of Social Science"<<endl;
+	cin>>M3;
+	cout<<"enter marks of English"<<endl;
+	cin>>M4;
+	cout<<"enter marks of Science"<<endl;
+	cin>>M5;
+	total=M1+M2+M3+M4+M5;
+	percentage=total*100/500;
+	cout<<"Percentage = "<<percentage<<endl;
+	return 0;
+}

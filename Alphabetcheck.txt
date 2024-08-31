@@ -1,0 +1,15 @@
+#include<iostream>
+using namespace std;
+int main()
+{
+	char ch;
+	cout<<"Enter one character: ";
+	cin>>ch;
+	if (ch>=65 && ch<=90)
+	cout<<"Character is uppercase"<<endl;
+	else if (ch>=97 && ch<=122)
+	cout<<"Character is lowercase"<<endl;
+	else
+	cout<<"Invalid character!"<<endl;
+	return 0;
+}

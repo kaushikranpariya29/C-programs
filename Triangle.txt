@@ -1,0 +1,20 @@
+#include<iostream>
+using namespace std;
+int main()
+{
+	int  ab,bc,ac;
+	cout<<"Enter the value of AB: ";
+	cin>>ab;
+	cout<<"Enter the value of BC: ";
+	cin>>bc;
+	cout<<"Enter the value of AC: ";
+	cin>>ac;
+	if( ab == bc && bc == ac && ac == ab )
+	cout<<"Traingle is equilateral."<<endl;
+	else if ( ab == bc || bc == ac || ac == ab)
+	cout<<"Triangle is isoless."<<endl;
+	else if ( ab != bc || bc != ac || ab != ac)
+	cout<<"Triangle is scalence."<<endl;
+	return 0;
+}
+

@@ -1,0 +1,39 @@
+#include<iostream>
+using namespace std;
+void discount(char a)
+{
+	if(a=='P' || a=='p')
+	{
+		cout<<"Discount of customer = 10%"<<endl;
+	}
+	else if(a=='S' || a=='s')
+	{
+		cout<<"Discount of customer = 20%"<<endl;
+	}
+	else if(a=='O' || a=='o')
+	{
+		cout<<"Discount of customer = 30%"<<endl;
+	}
+
+}	
+int main()
+{
+	int Cn,Ca,amount,Totalamount;
+	char Ct;
+	cout<<"Enter customer number : ";
+	cin>>Cn;
+	cout<<"Enter customer amount : ";
+	cin>>Ca;
+	cout<<"Enter customer type (P/S/O) : ";
+	cin>>Ct;
+	if(Ct=='P'||Ct=='p')
+		amount=Ca*10/100;
+	else if(Ct=='S'|| Ct=='s')
+		amount=Ca*20/100;
+	else
+		amount=Ca*30/100;
+	Totalamount=Ca-amount;
+	cout<<"Totalamount with Discount : "<<Totalamount<<endl;
+	discount(Ct);
+	return 0;
+}

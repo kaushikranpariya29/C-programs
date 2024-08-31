@@ -1,0 +1,10 @@
+//Program to convert tempreture from fahrenheit to celsius.
+#include<iostream>
+using namespace std;
+int main()
+{
+	double F=130,C;
+	C=(F-32)*5/9;
+	cout<<"Tempreture of Canada in celsius is :"<<C<<endl;
+	return 0;
+}

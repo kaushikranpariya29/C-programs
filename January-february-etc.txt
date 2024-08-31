@@ -1,0 +1,35 @@
+#include<iostream>
+using namespace std;
+int main()
+{
+	int month;
+	cout<<"Enter any number between 1 and 12: ";
+	cin>>month;
+	if (month == 1)
+	cout<<"Number 1 in month is january"<<endl;
+	else if (month == 2)
+	cout<<"Number 2 in month is february"<<endl;
+	else if (month == 3)
+	cout<<"Number 3 in month is march"<<endl;
+	else if (month == 4)
+	cout<<"Number 4 in month is april"<<endl;
+	else if (month == 5)
+	cout<<"Number 5 in month is may"<<endl;
+	else if (month == 6)
+	cout<<"Number 6 in month is june"<<endl;
+	else if (month == 7)
+	cout<<"Number 7 in month is july"<<endl;
+	else if (month == 8)
+	cout<<"Number 8 in month is august"<<endl;
+	else if (month == 9)
+	cout<<"Number 9 in month is september"<<endl;
+	else if (month == 10)
+	cout<<"Number 10 in month is octomber"<<endl;
+	else if (month == 11)
+	cout<<"Number 11 in month is november"<<endl;
+	else if (month == 12)
+	cout<<"Number 12 in month is december"<<endl;
+	else
+	cout<<"Invalid number!"<<endl;
+	return 0;
+}

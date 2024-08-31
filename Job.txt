@@ -1,0 +1,55 @@
+#include<iostream>
+using namespace std;
+class Job
+{
+    int id;
+	int time;
+	int rate;
+	public:
+	Job()
+	{
+		id=time=rate=0;	
+	}	
+	void getdata()
+	{
+		cout<<endl<<"enter Job id = ";
+		cin>>id;
+		cout<<"Enter time in hours = ";
+		cin>>time;
+        cout<<"Enter rate per hour = ";
+		cin>>rate;
+	}
+    int operator +(Job j1)
+	{
+		int temp;
+		temp = j1.time+time;
+		return temp;
+	}
+    int operator -(Job j1)
+	{
+		int temp;
+		temp = j1.time-time;
+		return temp;
+	}
+	void display()
+	{
+        cout<<"id = "<<id<<endl;
+		cout<<"time = "<<time<<endl;
+		cout<<"hours = "<<rate<<endl;
+        cout<<endl;
+	}
+};
+int main()
+{
+    int sum,sub;
+	Job j1,j2;
+	cout<<endl<<"Enter the value for j1";
+	j1.getdata();
+	cout<<endl<<"Enter the value for j2";
+	j2.getdata();	
+	sum=j1+j2;
+    cout<<endl<<"total time for two job = "<<sum<<endl;
+	sub=j1-j2;
+    cout<<endl<<"difference between time of two job = "<<sub<<endl;
+	return 0;
+}

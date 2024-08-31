@@ -1,0 +1,75 @@
+/*5. Write a program to input element at the position of user’s
+choice.*/
+#include<iostream>
+using namespace std;
+int main(){
+	int row,column,c,r,choice;
+	cout<<"Enter a Row of an array : ";
+	cin>>row;
+	cout<<"Enter a Column of an array : ";
+	cin>>column;
+	int array[column][row];
+	for(int i=0; i<column; i++)
+	{
+		for(int j=0; j<row; j++)
+		{
+			array[i][j]=0;
+		}
+	}
+	while(1){
+		cout<<"\nEnter a Choice :-\n1. for Set Value By Giving Position \n2. for Exit "<<endl;
+		cin>>choice;
+		if(choice==2)
+		{break;}
+		else if(choice==1)
+		{
+			cout<<"\nEnter Column Where You Want To Set Value : ";
+			cin>>c;
+			cout<<"Enter Row Where You Want To Set Value : ";
+			cin>>r;
+			if(column>c && row>r)
+			{
+				cout<<"Enter Value You Want To Set on ["<<c<<"]["<<r<<"]"<<" : ";
+				cin>>array[c][r];
+			}
+			else
+				cout<<"Invalid Input"<<endl;
+		}
+		else
+			cout<<"Invalid Input";
+	}
+	cout<<"\nEelemnts of an array is :-\n";
+	for(int i=0; i<column; i++)
+	{
+		for(int j=0; j<row; j++)
+		{
+			cout<<array[i][j]<<" ";
+		}
+		cout<<endl;
+	}
+}
+
+BMIIT202103103410009@bmiit:~/Desktop$ g++ P5.cpp
+BMIIT202103103410009@bmiit:~/Desktop$ ./a.out
+Enter a Row of an array : 2
+Enter a Column of an array : 3
+
+Enter a Choice :-
+1. for Set Value By Giving Position 
+2. for Exit 
+1
+
+Enter Column Where You Want To Set Value : 1
+Enter Row Where You Want To Set Value : 1
+Enter Value You Want To Set on [1][1] : 123
+
+Enter a Choice :-
+1. for Set Value By Giving Position 
+2. for Exit 
+2
+
+Eelemnts of an array is :-
+0 0 
+0 123 
+0 0 
+

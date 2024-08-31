@@ -1,0 +1,31 @@
+#include<iostream>
+using namespace std;
+int main ()
+{
+	int a[5];
+	cout<<"enter array elements";
+	for (int i=0;i<5;i++)
+	{
+		cout<<"enter"<<i+1<<"element";
+			cin>>a[i];
+	}
+		for(int i=0;i<5;i++)
+	{
+		cout<<"your"<<i+1<<"element is"<<a[i]<<endl;
+	}
+		return 0;
+}
+
+BMIIT202103103410009@bmiit:~/Desktop$ g++ P1.cpp
+BMIIT202103103410009@bmiit:~/Desktop$ ./a.out
+enter array elementsenter1element1
+enter2element2
+enter3element3
+enter4element4
+enter5element5
+your1element is1
+your2element is2
+your3element is3
+your4element is4
+your5element is5
+

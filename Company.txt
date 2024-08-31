@@ -1,0 +1,57 @@
+/*Write a C++ program to create class called Company having two 
+members such as company name and balance and create other 
+required member functions for getting and setting values. 
+Overload (+) operator to add balance of two company objects and 
+(-) operator to subtract balance of two company objects. Write 
+main() to demonstrate above mentioned functionalities*/
+
+#include<iostream>
+using namespace std;
+class Company
+{
+    string c_name;
+    double bal;
+    public:
+    Company()
+    {
+        c_name="";
+        bal=0.0;
+    }
+    void getting()
+    {
+        cout<<endl<<"Enter company name- ";
+        cin>>c_name;
+        cout<<endl<<"Enter balance- ";
+        cin>>bal;
+    }
+    void setting()
+    {
+        cout<<"--------------------------------";
+        cout<<endl<<" company name- "<<c_name;
+        cout<<endl<<" balance- "<<bal;
+
+    }
+    Company operator +(Company c)
+    {
+        Company temp;
+        temp.bal=bal+c.bal;
+        return temp;
+    }
+    Company operator -(Company c)
+    {
+        Company temp;
+        temp.bal=bal-c.bal;
+        return temp;
+    }
+};
+int main()
+{
+    Company k1,k2,k3,k4;
+    k1. getting();
+    k2. getting();
+    k3=k1+k2;
+    k4=k1-k2;
+    k3.setting();
+    k4.setting();
+    return 0;
+}

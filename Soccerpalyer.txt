@@ -1,0 +1,56 @@
+#include<iostream>
+using namespace std;
+class Soccerplayer
+{
+    int id;
+	int gols;
+	int assists;
+    int sum;
+	public :
+	Distance()
+	{
+        id=gols=assists=sum=0;
+	}
+	void getDetails()
+	{
+        cout<<"enter id = ";
+		cin>>id;    
+		cout<<"enter gols = ";
+		cin>>gols;
+		cout<<"enter assists = ";
+		cin>>assists;
+        sum=gols+assists;
+	}
+	void showdetails()
+	{
+        cout<<"id = "<<id<<endl;
+		cout<<"gols = "<<gols<<endl;
+		cout<<"assists = "<<assists<<endl;
+		cout<<"sum = "<<sum<<endl;
+	}
+	friend bool operator >(Soccerplayer s1,Soccerplayer s2)
+	{
+		if(s1.sum>s2.sum){
+			return false;
+		}
+		else{
+			return true;
+		}
+	}
+};
+int main()
+{
+	Soccerplayer s[11];
+	for(int i=0;i<11;i++){
+        cout<<"enter detail of "<<i<<" player = "<<endl;
+        s[i].getDetails();
+        cout<<endl;
+    }
+    Soccerplayer max;
+    for(int i=0;i<11;i++){
+        if(max>s[i]){
+            max=s[i];
+        }
+    }
+    max.showdetails();
+}

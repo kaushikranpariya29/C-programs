@@ -1,0 +1,16 @@
+//Program to check whether the height of a person is taller, dwarf or average.#include<iostream>
+#include<iostream>
+using namespace std;
+int main()
+{
+	double H;
+	cout<<"Enter height :"<<endl;
+	cin>>H;
+	if(H>=6)
+	cout<<"Person is tall"<<endl;
+	if(H>=5 && H<6)
+	cout<<"Height of person is average."<<endl;
+	if(H<5)
+	cout<<"Person is dwarf."<<endl;
+	return 0;
+}

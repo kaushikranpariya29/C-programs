@@ -1,0 +1,95 @@
+/*10. Write a program to input old value and new value. Find old
+value from array and replace with new value.*/
+#include<iostream>
+using namespace std;
+int main(){
+	int row,column,c,r,choice;
+	int oldVal,newVal;
+	bool change = false;
+	cout<<"Enter a Row of an array    : ";
+	cin>>row;
+	cout<<"Enter a Column of an array : ";
+	cin>>column;
+	int array[column][row];
+	cout<<"Enter a Eelemnts of an array : \n";
+	for(int c=0 ; c<column ; c++){
+		for(int r=0 ; r<row ; r++){
+			cin>>array[c][r];		
+		}
+	}
+	while(1){
+		cout<<"\nEnter your choice :-\n";
+		cout<<"1. Replacing a number\n";
+		cout<<"2. Exitn\n: ";
+		cin>>choice;
+		if(choice == 1){
+			cout<<"\nEnter a Old value : ";
+			cin>>oldVal;
+			cout<<"Enter a New value   : ";
+			cin>>newVal;
+			for(int c=0 ; c<column ; c++){
+				for(int r=0 ; r<row ; r++){
+					if(oldVal == array[c][r]){
+						array[c][r] = newVal;
+						change = true;
+					}
+				}
+			}
+			if(change){
+				cout<<"\nYour Value chnaged Successfuly :-\n";
+			}
+			else{
+				cout<<"\nYour Old Value does not match with any value of the array :-\n";
+			}
+		}
+		else if(choice == 2){break;}
+		else{cout<<"\nInvalid Choice try again :-\n";}		
+	}
+	cout<<"\nEelemnts of an array is :-\n";
+	for(int c=0; c<column; c++)
+	{
+		for(int r=0; r<row; r++)
+		{
+			cout<<array[c][r]<<" ";
+		}
+		cout<<endl;
+	}
+	return 0;
+}
+BMIIT202103103410009@bmiit:~/Desktop$ g++ P10.cpp
+BMIIT202103103410009@bmiit:~/Desktop$ ./a.out
+Enter a Row of an array    : 3
+Enter a Column of an array : 2
+Enter a Eelemnts of an array : 
+1
+2
+3
+45
+6
+8
+
+Enter your choice :-
+1. Replacing a number
+2. Exitn
+: 5
+
+Invalid Choice try again :-
+
+Enter your choice :-
+1. Replacing a number
+2. Exitn
+: 4
+
+Invalid Choice try again :-
+
+Enter your choice :-
+1. Replacing a number
+2. Exitn
+: 2
+
+Eelemnts of an array is :-
+1 2 3 
+45 6 8 
+
+
+

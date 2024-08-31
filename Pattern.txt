@@ -1,0 +1,28 @@
+#include<iostream>
+using namespace std;
+int main()
+{
+	int i,n,j,tmp;
+	cin>>n;
+	tmp=n;
+	for(j=1;j<=n;j++)
+	{
+		for(i=1;i<=j;i++)
+		{	
+			cout<<"*";
+		}
+		
+		cout<<endl;
+	}
+	
+	for(j=1;j<=n;j++)
+	{
+		for(i=1;i<=tmp;i++)
+		{	
+			cout<<"*";
+		}
+		tmp=tmp-1;
+		cout<<endl;
+	}
+	return 0;
+}

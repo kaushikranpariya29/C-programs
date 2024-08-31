@@ -1,0 +1,53 @@
+/*Define a counter class with one data. Use default and parameterized 
+constructor to set the values and overload operator ++ and - - pre and 
+post both to increase and decrease the values.*/
+
+#include<iostream>
+using namespace std;
+class Counter
+{
+    int pre;
+    int post;
+    public:
+    Counter()
+    {
+        pre=0;
+        post=0;
+    }
+    Counter(int i1,int i2)
+    {
+        pre=i1;
+        post=i2;
+    }
+    void getdata()
+   {
+       cout<<endl<<"Enter a value of pre- ";
+       cin>>pre;
+       cout<<endl<<"Enter a value of post- ";
+       cin>>post;
+   }
+   void display()
+   {
+       cout<<endl<<"value of pre- "<<pre;
+       cout<<endl<<"value of post- "<<post;
+   }
+   void operator ++()
+   {
+       pre++;
+       post++;
+   }
+    void operator --()
+   {
+       pre--;
+       post--;
+   }
+};
+int main()
+{
+    Counter c1,c2(5,6);
+    c1.getdata();
+    ++c1;
+    ++c2;
+    c1.display();
+    c2.display();
+}

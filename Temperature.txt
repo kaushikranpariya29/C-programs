@@ -1,0 +1,21 @@
+#include<iostream>
+using namespace std;
+int main()
+{
+	int temp;
+	cout<<"Enter temperature in centigrade: ";
+	cin>>temp;
+	if (temp < 0)
+	cout<<"Weather is freezing."<<endl;
+	else if (temp >= 0 && temp <=10 )
+	cout<<"Weather is very cold."<<endl;
+	else if (temp > 10 && temp <=20 )
+	cout<<"Weather is cold."<<endl;
+	else if (temp >= 21 && temp <=30 )
+	cout<<"Weather is normal."<<endl;
+	else if (temp > 30 && temp < 40 )
+	cout<<"Weather is hot."<<endl;
+	else if (temp >= 40 )
+	cout<<"Weather is very hot."<<endl;
+	return 0;
+}

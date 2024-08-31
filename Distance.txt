@@ -1,0 +1,61 @@
+/*Create a class Distance with members feet, inches and member 
+fucntion input() to take distance from keyboard and output() to 
+display distance on screen. Overload + operator using member 
+function to add two distance objects and return distance object, 
+also overload > operator using friend function to compare which 
+distance object is greater and return 0 and 1 accordingly*/
+
+#include<iostream>
+using namespace std;
+class Distance
+{
+    double feet;
+    double inches;
+    public:
+     Distance()
+     {
+         feet=0.0;
+         inches=0.0;
+     }
+     void input(int num)
+     {
+         cout<<"enter a distance "<<num<<"-"<<endl;
+         cout<<endl<<"Enter feet- ";
+         cin>>feet;
+         cout<<endl<<"Enter inches- ";
+         cin>>inches;
+     }
+     void display(int num)
+     {
+         cout<<"---------------------------------"<<endl;
+         cout<<" distance "<<num<<"-"<<endl;
+        cout<<endl<<"feet- "<<feet;
+        cout<<endl<<"inches- "<<inches; 
+     }
+     Distance operator +(Distance d)
+     {
+        Distance temp;
+        temp.feet=feet+d.feet;
+        temp.inches=inches+d.inches;
+        return temp; 
+     }
+    friend bool operator >( Distance d1, Distance d2)
+    {
+        if(d1.feet>d2.feet){return 1;}
+        else if(d1.inches>d2.inches){return 1;}
+        else{return 0;}
+    } 
+};
+int main()
+{
+     Distance d1,d2,d3;
+     d1.input(1);
+     d2.input(2);
+     d3=d1+d2;
+     d1.display(1);
+     d2.display(2);
+     d3.display(3);
+     if(d1>d2){cout<<" d1 is greter ";}
+     else {cout<<"d2 is greter ";}
+     return 0;
+}

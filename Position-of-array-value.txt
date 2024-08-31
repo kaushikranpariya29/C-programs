@@ -1,0 +1,45 @@
+/*8. Write a program to find positions of inputted value from
+array.*/
+#include<iostream>
+using namespace std;
+int main(){
+	int row,column,value;
+	bool getPos = true;
+	cout<<"Enter a Row of an array : ";
+	cin>>row;
+	cout<<"Enter a Column of an array : ";
+	cin>>column;
+	int array[column][row];
+	cout<<"Enter a Eelemnts of an array : \n";
+	for(int c=0 ; c<column ; c++){
+		for(int r=0 ; r<row ; r++){
+			cin>>array[c][r];		
+		}
+	}
+	cout<<"Enter a any number to find that position from the array : ";
+	cin>>value;
+	for(int c=0 ; c<column ; c++){
+		for(int r=0 ; r<row ; r++){
+			if(value == array[c][r]){
+				cout<<"Position of this value is Column : "<<c<<" Row : "<<r<<endl;
+				getPos = false;			
+			}
+		}
+	}
+	if(getPos){cout<<"This value is Not available in array\n";}
+	return 0;
+}
+BMIIT202103103410009@bmiit:~/Desktop$ g++ P8.cpp
+BMIIT202103103410009@bmiit:~/Desktop$ ./a.out
+Enter a Row of an array : 2
+Enter a Column of an array : 3
+Enter a Eelemnts of an array : 
+4
+5
+6
+1
+2
+3
+Enter a any number to find that position from the array : 2
+Position of this value is Column : 2 Row : 0
+
