@@ -1,0 +1,28 @@
+#include<iostream>
+#include<fstream>
+#include<iomanip>
+using namespace std;
+int main()
+{
+    string word;
+    ifstream fin("Mahatma.txt");
+    if(!fin){
+        cout<<"File Opening error";
+        return 0;
+    }
+    //fin>>resetiosflags(ios::skipws);
+    while(1){
+        fin>>word;
+        if(word=="Gandhi")
+        {
+            word="Mahatma";
+            cout<<word<<" ";
+        }
+        else{
+            cout<<word<<" ";
+        }
+        if(fin.eof()){break;}
+    }
+    
+    return 0;
+}

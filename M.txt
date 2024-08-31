@@ -1,0 +1,87 @@
+#include<iostream>
+#include<fstream>
+using namespace std;
+class Student{
+    int s_id;
+    string s_name;
+    
+
+    public :
+    Student()
+	{
+        s_id =0;
+        s_name = "";
+    }
+    void getdata(){
+        cout<<"Enter a s_id  : ";
+        cin>>s_id;
+        cout<<"Enter a s_name : ";
+        cin>>s_name;
+        
+
+        ofstream fout("Student_info.txt");
+        fout<<s_id<<endl<<s_name<<endl;
+    }
+    void putdata()
+	{
+        cout<<"\nStudent id  : "<<s_id; 
+        cout<<"\nStudent name   : "<<s_name;   
+    }
+};
+class Course{
+    int c_id,fees;
+    string c_name;
+    
+
+    public :
+    Course()
+	{
+        c_id =0;
+        c_name=" ";
+        fees=0;
+    }
+    void getdata(){
+        cout<<"Enter a c_id  : ";
+        cin>>c_id;
+        cout<<"Enter a c_name : ";
+        cin>>c_name;
+        cout<<"Enter the fees  :";
+        cin>>fees;
+        
+
+        ofstream fout("coursedetails.txt");
+        fout<<c_id<<endl<<c_name<<endl<<fees<<endl;
+    }
+    void putdata()
+	{
+        cout<<"Course id  : "<<c_id; 
+        cout<<"Course name   : "<<c_name; 
+		cout<<"fees :"<<fees;  
+    }
+};
+
+int main(){
+    Student s1;
+    s1.getdata();
+    Course c1;
+    c1.getdata();
+
+    ifstream fin("Student_info.txt");
+    if(!fin){cout<<"Error file opening\n";}
+    int s_id;
+    string s_name;
+    
+    fin>>s_id>>s_name;
+    
+    ifstream ("Course_Details.txt");
+    if(!fin){cout<<"Error file opening\n";}
+    int c_id,fees;
+    string c_name;
+    
+   
+    fin>>c_id>>c_name>>fees;
+
+    
+    return 0;
+    
+}

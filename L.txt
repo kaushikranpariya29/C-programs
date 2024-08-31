@@ -1,0 +1,61 @@
+#include<iostream>
+#include<fstream>
+using namespace std;
+void number_write(int count)
+{
+	int num;
+	ofstream fout;
+	fout.open("Number.txt");
+	if(!fout)
+	{
+		cout<<endl<<"Error: Number.txt can not be opened in write mode";
+		return;
+	}
+	for(int i=0;i<count;i++)
+	{
+		cout<<endl<<"Enter number  = ";
+		cin>>num;
+		fout<<num<<endl;
+	}
+	fout.close();
+}
+void number_read()
+{
+	int num;
+	ifstream fin;
+	fin.open("Number.txt");
+	if(!fin)
+	{
+		cout<<endl<<"Error opening file";
+		return;
+	}
+	int sum=0;
+	int count=0;
+	while(1)
+	{
+		fin>>num;
+		if(num%2!=0)
+		{
+			if(sizeof(num)==3){
+				sum=sum+num;
+				count++;
+			}
+		}
+		if(fin.eof()){break;}
+	}
+	cout<<"avrage of odd numbers = "<<sum/count<<endl;
+	fin.close();
+}
+int main()
+{
+	int count;
+	cout<<endl<<"How many number do you want to store ? = ";
+	cin>>count;
+	cout<<endl<<"Enter numbers to be store";
+	number_write(count);
+	cout<<endl<<"dispaly numbers from the file";
+	number_read();
+	return 0;
+	
+}
+

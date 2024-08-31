@@ -1,0 +1,68 @@
+/*Write a C++ program to create a class namely SoccerPlayer which 
+contains data members such as a player's jersey number, numberof goals and number of assists. Include GetDetails and 
+ShowDetails() as member function. Also overload (>) operator as 
+friend function which compares two SoccerPlayers if the sum of 
+goals plus assists is greater. Create an array of 11 SoccerPlayers,
+then use the (>) operator to find the player who has the greatest 
+total of goals plus assists*/
+
+#include<iostream>
+using namespace std;
+class  SoccerPlayer
+{
+    int jersey_num;
+    int goals;
+    int assists;
+    public:
+     SoccerPlayer()
+     {
+        jersey_num=0;
+        goals=0;
+        assists=0;
+     }
+     void GetDetails()
+    {
+        cout<<endl<<"Enter jersey_num-  ";
+        cin>>jersey_num;
+        cout<<endl<<"Enter number of goals- ";
+        cin>>goals;
+        cout<<endl<<"Enter number of assists-  ";
+        cin>>assists;
+    }
+    void ShowDetails()
+    {
+        cout<<"-----------------------------------------------";
+        cout<<endl<<"Enter jersey_num-  "<<jersey_num;
+        cout<<endl<<"Enter number of goals- "<<goals;
+        cout<<endl<<"Enter number of assists-  "<<assists;
+    }
+    friend bool operator >(SoccerPlayer s1,SoccerPlayer s2)
+    {
+        if(s1.goals>s2.goals){return 1;}
+        else {return 0;}
+    }
+};
+int main()
+{
+    SoccerPlayer player[11],max;
+    for (int i=0; i<11; i++){
+        cout<<"enter a detail for player- "<<i+1<<endl;
+        player[i].GetDetails();
+    } 
+    if(player[0]>player[1]){
+        cout<<endl<<"player 1 goal is grater - ";
+    }
+    else
+    {
+       cout<<endl<<"player 2 goal is grater - " ;
+    }
+    max = player[0];
+    for(int i=1 ; i<11 ; i++){
+        if(player[i] > max){
+            max = player[i];
+        }
+    }
+    cout<<"Maximum Goal of 11 player- "<<endl;
+    max.ShowDetails();
+    return 0;
+}

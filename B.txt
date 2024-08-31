@@ -1,0 +1,53 @@
+#include<iostream>
+using namespace std;
+class Company
+{
+    string co_name;
+    int balance;
+    public:
+    Company()
+    {
+        co_name="";
+        balance=0;
+    }
+    void getting()
+    {
+        cout<<"enter company name = ";
+        cin>>co_name;
+        cout<<"enter company balance = ";
+        cin>>balance;
+    }
+    Company operator +(Company c)
+    {
+        Company temp;
+        temp.balance=balance+c.balance;
+        return temp;
+    }
+    Company operator -(Company c)
+    {
+        Company temp;
+        if(balance>c.balance){
+            temp.balance=balance-c.balance;
+        }
+        else{
+            temp.balance=c.balance-balance;
+        }
+        return temp;
+    }
+    void setting()
+    {
+        cout<<"enter company balance = "<<balance<<endl;
+    }
+};
+int main()
+{
+    Company c1,c2,c3;
+    c1.getting();
+    c2.getting();
+    c3=c1+c2;
+    cout<<"addition of two object = "<<endl;
+    c3.setting();
+    c3=c1-c2;
+    cout<<"subtraction of two object = "<<endl;
+    c3.setting();
+}

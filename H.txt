@@ -1,0 +1,58 @@
+#include<iostream>
+using namespace std;
+class Demo_8
+{
+    string a;
+    string b;
+    public:
+    Demo_8()
+    {
+        a="";
+        b="";
+    }
+    void getdata()
+    {
+        cout<<"enter 1st string = ";
+        cin>>a;
+        cout<<"enter 2nd string = ";
+        cin>>b;
+    }
+    string operator +()
+    {
+        string temp;
+        temp=a+b;
+        return temp;
+    }
+    bool operator ==()
+    {
+        if(a==b)
+        { 
+            return true;
+        }
+    }
+    bool operator <()
+    {
+        if(a.length<b.length)
+        {
+            return true;
+        }
+    }
+};
+int main()
+{
+    Demo_8 d;
+    d.getdata();
+    cout<<"sum of the sring = "<<+d;
+    if(==d){
+        cout<<"both are same"<<endl;
+    }
+    else{
+        cout<<"they are diffrent"<<endl;
+    }
+    if(<d){
+        cout<<"a is large "<<endl;
+    }
+    else{
+        cout<<"b is large "<<endl;
+    }
+}

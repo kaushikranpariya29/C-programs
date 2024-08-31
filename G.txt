@@ -1,0 +1,56 @@
+#include<iostream>
+using namespace std;
+class Distance
+{
+	int feet;
+	int inches;
+	public :
+	Distance()
+	{
+		feet=inches=0;
+	}
+	void input()
+	{
+		cout<<"enter feet = ";
+		cin>>feet;
+		cout<<"enter inches = ";
+		cin>>inches;
+	}
+	void output()
+	{
+		cout<<"=========================\n";
+		cout<<"feet = "<<feet<<endl;
+		cout<<"inches = "<<inches<<endl;
+		cout<<"=========================\n";
+	}
+	Distance operator +(Distance d)
+	{
+		Distance temp;
+		temp.feet=feet+d.feet;
+		temp.inches=inches+d.inches;
+		return temp;
+	}
+	friend bool operator >(Distance d1,Distance d2)
+	{
+		if(d1.feet>d2.feet){
+			return true;
+		}
+		else{
+			return false;
+		}
+	}
+};
+int main()
+{
+	Distance d1,d2,d3;
+	d1.input();
+	d2.input();
+	d3=d1+d2;
+	d3.output();
+	if(d1>d2){
+		cout<<"d1 object is greater"<<endl;	
+	}
+	else{
+		cout<<"d2 object is greater"<<endl;
+	}
+}

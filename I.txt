@@ -1,0 +1,36 @@
+#include<iostream>
+#include<fstream>
+using namespace std;
+int main()
+{
+	int num_1;
+	int num_2;
+	int sum=0;
+	ofstream fout("Integer.txt");
+	cout<<"enter number 1 "<<endl;
+	cin>>num_1;
+	cout<<"enter number 2"<<endl;
+	cin>>num_2;
+	cout<<num_1<<endl;
+	cout<<num_2<<endl;
+	fout<<num_1<<endl;
+	fout<<num_2<<endl;
+
+	if (num_1% 2==0 && num_2% 2==0)
+	{
+		sum=num_1 + num_2;	
+	}
+	else
+	{
+		cout<<"sum is not possible"<<endl;
+	}
+
+	ifstream fin("Integer.txt");
+
+
+	cout<<"sum of even number is :"<<sum<<endl;
+	fin>>num_1;
+	fin>>num_2;
+	fin>>sum;
+	return 0;
+}

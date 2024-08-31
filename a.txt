@@ -1,0 +1,71 @@
+#include<iostream>
+using namespace std;
+class Binary
+{
+    int num1;
+    int num2;
+    public :
+    Binary()
+    {
+        num1=num2=0;
+    }
+    void getdata()
+    {
+        cout<<"enter the value of num1 = ";
+        cin>>num1;
+        cout<<"enter the value of num2 = ";
+        cin>>num2;
+        cout<<endl;
+    }
+    Binary operator +(Binary b)
+    {
+        Binary temp;
+        temp.num1=num1+b.num1;
+        temp.num2=num2+b.num2;
+        return temp;
+    }
+    Binary operator -(Binary b)
+    {
+        Binary temp;
+        temp.num1=num1-b.num1;
+        temp.num2=num2-b.num2;
+        return temp;
+    }
+    Binary operator *(Binary b)
+    {
+        Binary temp;
+        temp.num1=num1*b.num1;
+        temp.num2=num2*b.num2;
+        return temp;
+    }
+    Binary operator /(Binary b)
+    {
+        Binary temp;
+        temp.num1=num1/b.num1;
+        temp.num2=num2/b.num2;
+        return temp;
+    }
+    void display()
+    { 
+        cout<<"enter the value of num1 = "<<num1<<endl;
+        cout<<"enter the value of num2 = "<<num2<<endl;
+    }
+};
+int main()
+{
+    Binary b1,b2,b3;
+    b1.getdata();
+    b2.getdata();
+    b3=b1+b2;
+    cout<<"addition of object"<<endl;
+    b3.display();
+    b3=b1-b2;
+    cout<<"subtraction of object"<<endl;
+    b3.display();
+    b3=b1*b2;
+    cout<<"multipication of object"<<endl;
+    b3.display();
+    b3=b1/b2;
+    cout<<"division of object"<<endl;
+    b3.display();
+}

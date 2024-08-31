@@ -1,0 +1,48 @@
+/*Write a program to sum the real and imaginary part of different object 
+using stream operator overloading and + operator overloading.
+Overload the operators using friend function.*/
+
+#include<iostream>
+using namespace std;
+class  Sum
+{
+    double real;
+    double image;
+    public:
+    Sum()
+    {
+        real=0.0;
+        image=0.0;
+    }
+    void getdata()
+    {
+        cout<<endl<<"enter a real num- ";
+        cin>>real;
+        cout<<endl<<"enter a image part- ";
+        cin>>image;
+    }
+    void display()
+    {
+        cout<<"-------------------";
+        cout<<endl<<" real num- "<<real;
+        cout<<endl<<"image part- "<<image;
+    }
+    friend Sum operator +(Sum s1, Sum s2)
+    {
+        Sum temp;
+        temp.real=s1.real+s2.real;
+        temp.image=s1.image+s2.image;
+        return temp;
+    }
+};
+int main()
+{
+    Sum s1,s2,s3;
+    cout<<endl<<"value of s1- ";
+    s1.getdata();
+    cout<<endl<<"value of s2- ";
+    s2.getdata();
+    s3=s1+s2;
+    s3.display();
+    return 0;
+}

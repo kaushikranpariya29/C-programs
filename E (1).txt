@@ -1,0 +1,58 @@
+/*Write a program to create a class Job with three data members 
+job id, job time in hours, and per hour rate that is wages of job. 
+Include getData() to take input from user and displayData() to 
+display details on screen. Overload binary (+) operator as a friend 
+function and return integer that indicate total time for two job 
+and overload (-)operator as a friend function and return integer 
+that indicate difference between time of two job. Include main() 
+to achieve the mentioned functionalities*/
+
+#include<iostream>
+using namespace std;
+class Job
+{
+    int id;
+    int time;
+    double rate;
+    public:
+    Job()
+    {
+        id=0;
+        time=0;
+        rate=0.0;
+    }
+    void getData()
+    {
+        cout<<endl<<"Enter job id- ";
+        cin>>id;
+        cout<<endl<<"Enter job time- ";
+        cin>>time;
+        cout<<endl<<"Enter rate- ";
+        cin>>rate;
+    }
+    void displaydata()
+    {
+       cout<<endl<<" job id- "<<id;
+       cout<<endl<<" job time- "<<time; 
+       cout<<endl<<" rate- "<<rate;
+    }
+     friend int operator  +(Job j1,Job j2)
+     {
+        return j1.time + j2.time; 
+     }
+     friend int operator  -(Job j1,Job j2)
+     {
+        return j1.time - j2.time; 
+     }
+
+
+};
+int main()
+{
+        Job i1,i2;
+        i1.getData();
+        i2.getData();
+        cout<<"Total time of job- "<<i1+i2<<endl;
+        cout<<"Difference between two job- "<<i1-i2<<endl;
+        return 0;
+}
